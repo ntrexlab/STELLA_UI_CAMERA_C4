@@ -1,0 +1,4 @@
+<launch>
+  <node name="stella_ui_camera_node" pkg="stella_ui_camera"  type="stella_ui_dialog.pyc" output="screen">
+  </node>
+</launch>

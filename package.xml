@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2" >
+  <name>stella_ui_camera</name>
+  <version>1.11.0</version>
+  <description>The runtime_manager package</description>
+  <maintainer email="kondoh@axe-inc.co.jp">Masao KONDOH</maintainer>
+  <license>Apache 2</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>velodyne</exec_depend>
+  <exec_depend>uvc_camera</exec_depend>
+  <exec_depend>nmea_navsat_driver</exec_depend>
+  <export>
+  </export>
+</package>
