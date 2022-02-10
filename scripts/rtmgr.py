@@ -223,32 +223,32 @@ class MyFrame(wx.Frame):
 	
 	def OnTeleoperationKeyboard(self, event):
 		if self.button_teleoperation.GetValue() == True:
-        		key = event.GetKeyCode()
-        		if  key == 87:
+			key = event.GetKeyCode()
+			if  key == 87:
 				evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_W.GetId())
 				evt.SetEventObject(self.button_W)
 				wx.PostEvent(self,evt)
 				self.button_W.SetForegroundColour('#F9F9F8')
 				self.button_W.SetBackgroundColour('#8B8BB9')
-	        	elif key == 65:
-        	    		evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_A.GetId())
+			elif key == 65:
+				evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_A.GetId())
 				evt.SetEventObject(self.button_A)
 				wx.PostEvent(self,evt)
 				self.button_A.SetForegroundColour('#F9F9F8')
 				self.button_A.SetBackgroundColour('#8B8BB9')
-        		elif key == 83:
+			elif key == 83:
 				evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_S.GetId())
 				evt.SetEventObject(self.button_S)
 				wx.PostEvent(self,evt)
 				self.button_S.SetForegroundColour('#F9F9F8')
 				self.button_S.SetBackgroundColour('#8B8BB9')
-        		elif key == 68:
+			elif key == 68:
 				evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_D.GetId())
 				evt.SetEventObject(self.button_D)
 				wx.PostEvent(self,evt)
 				self.button_D.SetForegroundColour('#F9F9F8')
 				self.button_D.SetBackgroundColour('#8B8BB9')
-        		elif key == 88:
+			elif key == 88:
 				evt = wx.PyCommandEvent(wx.EVT_BUTTON.typeId,self.button_X.GetId())
 				evt.SetEventObject(self.button_X)
 				wx.PostEvent(self,evt)

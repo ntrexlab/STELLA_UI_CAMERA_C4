@@ -1,9 +1,9 @@
 connection_data:
-  remote_ip: 192.168.160.25
-  robot_id: pi
-  robot_ip: 192.168.160.115
-  robot_password: '1'
+  remote_ip: ''
+  robot_id: ''
+  robot_ip: ''
+  robot_password: ''
 navigation:
-  path_nav: /home/kgh/map.yaml
+  path_nav: ''
 save_map:
-  path_save_map: /home/kgh
+  path_save_map: ''

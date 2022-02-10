@@ -1444,20 +1444,20 @@ class MyFrame(rtmgr.MyFrame):
 			wx.CallAfter(append_tc_limit, tc, s, rm_chars)        #
         # State Tabs
         #
-        def getStateId(self, s_text):
-                if(self.mainstate_dic.has_key(s_text)):
-                    return self.mainstate_dic[s_text]
-                elif(self.substate_dic.has_key(s_text)):
-                    return self.substate_dic[s_text]
-                else :
-                    return -99
+	def getStateId(self, s_text):
+		if(self.mainstate_dic.has_key(s_text)):
+			return self.mainstate_dic[s_text]
+		elif(self.substate_dic.has_key(s_text)):
+			return self.substate_dic[s_text]
+		else :
+			return -99
 
-        def OnState(self, event):
-                pub = rospy.Publisher('state_cmd', std_msgs.msg.Int32, queue_size=10)
-                msg = std_msgs.msg.Int32()
-                clicked_event = event.GetEventObject()
-                msg.data = self.getStateId(clicked_event.GetLabel())
-                pub.publish(msg)
+	def OnState(self, event):
+		pub = rospy.Publisher('state_cmd', std_msgs.msg.Int32, queue_size=10)
+		msg = std_msgs.msg.Int32()
+		clicked_event = event.GetEventObject()
+		msg.data = self.getStateId(clicked_event.GetLabel())
+		pub.publish(msg)
 
 	#
 	# Common Utils
@@ -1999,7 +1999,7 @@ class ParamPanel(wx.Panel):
 			self.update()
 
 	def get_gdic_v_and_chk_enable(self, var_name):
-                gdic_v = dic_getset(self.gdic, var_name, {})
+		gdic_v = dic_getset(self.gdic, var_name, {})
 		if 'panel' in gdic_v and dic_eval_if_str(self.frame, gdic_v, 'panel') != self.GetParent():
 			return None
 		return gdic_v
@@ -2403,12 +2403,12 @@ class MyApp(wx.App):
 		self.SetTopWindow(frame_1)
 		buttons_color_hdr_setup(frame_1)
 		frame_1.Show()
-    		post_evt_toggle_obj(frame_1,frame_1.button_W,True)
-	
+		post_evt_toggle_obj(frame_1,frame_1.button_W,True)
+
 		frame_1.notebook_1.ChangeSelection(0)
-				
+
 		return 1
-		
+
 def set_size_gdic(dlg, gdic={}):
 	(w, h) = dlg.GetSize()
 	if not gdic:
@@ -2547,7 +2547,7 @@ def th_start(target, kwargs={}):
 	th.start()
 	return (th, ev)
 
-def th_end((th, ev)):
+def th_end(th, ev):
 	if not th:
 		th = threading.current_thread()
 		threading.Timer( 1.0, th_end, ((th, ev),) ).start()
@@ -2565,9 +2565,7 @@ def append_tc_limit(tc, s, rm_chars=0):
 	tc.ChangeValue(s)
 	tc.ShowPosition(tc.GetLastPosition())
 	tc.PageDown()
-  	tc.ScrollLines(10)
-	
- 
+	tc.ScrollLines(10)
 
 def cut_esc(s):
 	while True:
